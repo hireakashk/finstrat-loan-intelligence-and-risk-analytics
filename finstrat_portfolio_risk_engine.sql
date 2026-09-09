@@ -612,14 +612,12 @@ FROM
 
 --Q59. Default Customer Count.
   
-SELECT 
-    COUNT(DISTINCT CUSTOMER_ID) AS DEFAULT_CUSTOMER_COUNT
+  SELECT 
+    COUNT(DISTINCT customer_id) AS default_customer_count
 FROM 
-    LOAN
+    loan
 WHERE 
-    DEFAULT_STATUS = 'Yes';
-
-SELECT * FROM LOAN
+    loan_status ILIKE 'default';
 
 --Q60. Percentage of Overdue Loans.
   
